@@ -33,6 +33,8 @@ public class BrokerServer implements Runnable{
                     String message = Broker.consume();
                     out.println(message);
                     out.flush();
+                } else if(str.equals("ACK")) {
+                    Broker.serialize();
                 } else {
                     Broker.produce(str);
                 }

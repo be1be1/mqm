@@ -30,6 +30,9 @@ public class MqClient {
            out.flush();
            String message = in.readLine();
 
+           out.println("ACK");
+           out.flush();
+
            return message;
         }
     }
